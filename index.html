@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html><head>
+	<title>The Address Studio</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+
+
+	<link rel="icon" type="image/png" href="images/favicon-pearl.png">
+
+	<!--main file-->
+	<link href="css/architecture.css" rel="stylesheet" type="text/css">
+
+	<!--Architecture Font Icons-->
+	<link href="fonts/architecture.css" rel="stylesheet" type="text/css">
+
+	<!-- Default Color -->
+	<link href="css/default-color.css" rel="stylesheet" type="text/css">
+
+	<!-- Custom Menu -->
+	<link href="css/custom-menu.css" rel="stylesheet" type="text/css">
+
+	<!--Bootstrap-->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+
+	<!--Revolution-->
+	<link href="css/settings.css" rel="stylesheet" type="text/css">
+
+	<!--Architecture CAROUSEL-->
+	<link href="css/owl.carousel.css" rel="stylesheet" type="text/css">
+
+	<!--Services Tabs-->
+	<link href="css/tabs.css" rel="stylesheet" type="text/css">
+
+	<!--Project Mouse hover-->
+	<link href="css/set1.css" rel="stylesheet" type="text/css">
+
+	<!--PreLoader-->
+	<link href="css/loader.css" rel="stylesheet" type="text/css">
+
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-KDQPXHXT');</script>
+	<!-- End Google Tag Manager -->
+	<style>
+        .social-btn {
+            display: flex;
+            width: 150px;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .social {
+            position: fixed;
+            top: -120px;
+        }
+
+        .social-btn img {
+            width: 40px;
+        }
+
+        .icons8-facebook {
+            order: 2;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB3ElEQVR4nO2az2rCQBDG9ah9tP65DQgmOYkHLzVa6NEVBHv0GdpUgg8iIvER9KwI8SpevjJhA22NJmpl13Q/mFuyzG+/2c2G2ULB6EYEoAzgCUALwKvicGUu5VMAigBeAGygnzZyYotZID75jel0ik6nA8uyQERKw7IsCCEQBEEM9HEUBkCbn/I8T3nydCCGw2EM4x6CuGPr2AnVyVJKSGfCxDUjF1NUTqoTpZTgMpO6P1hWtm0rT5RSwnGcGKSVBBJhqk6SMoaUMCCkgRtkHCH1DpCOjvDO6Ps+FosFttttFKvVCuPxGL1e7zZAGo0Glsvl0QMV6Q5SqVQwn89TT4akO8hgMEiFuAmQyWSCXICs1+u9pBmu2WyiWq2eNJZSkN1utwdSq9XOGkspSJIuHEsYEPqPjpyjMAzzARIEQT5ARqNRPkD6/X4+QOr1un4gWcAuHEsYEDKOkCktMmuEzK4Fs/2S+Y78lPmyk35HlPa1Gz1/BeKkNHoeI0QhtAfpdrtHW298QWCT9Q9NJchsNouboaU9EAnDzfioBXwtmEvD9/14Dp4TIb5dGPD4KXaGy0yH5qht21E5SSdY71lvP7jSOt0UshOpEL+ASgAeJNSb4nBlLslrwqign74AjK4jNUBggw4AAAAASUVORK5CYII=") 50% 50% no-repeat;
+            background-size: 100%;
+        }
+
+        .icons8-instagram {
+            order: 2;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAENElEQVR4nO1ayU4bQRBNciAX+ITkTyBf0SQxYBkrghuMQ6RcEBizyB8ACBD4xHIjBiXhF4CbQQIkLyiIVfIRbEsgveh1psPEeGzPAm0nKakkazxdXW+6+lVN1zx79q8KgDYAHQACACIAPvuktBUwbbc9lvMtAD4A2AJQwuNLyZyLc7b4AeA5AAEgQ+tnZ2dIJpOIxWIwDAPd3d0QQviitGUYhrTNOTiXKT8A9AF44SWENmgpk8lgbGzMN6fr1eHhYRwdHSlASQCtTkG8BrB3d3eHxcVFdHZ2PjkIYSrnXlpaAn2hTwBeOVmJvevra0SjUW0ARJkyIuiTCab6yjAOGU5EryOURA0dGRnB7e0twXzh/q0GpIt3MZx0Oy1sNJFIqD3zzg7ESwA5bmyde0LUUPqWzWYJJFuRmk3ObsiQEmVKijYlXAnIFrlbp4NTU1PI5/NS+bvavefn5wTyrRJTlZiIdALJ5/O/Uzt/V7t3Y2NDVQD35QyAN7zKJWsWIOPj4+rWDisQFmsYGBjw7Exvby9mZ2exu7sry4xSqSSVv3mN/4VCoZqhNTk5WXWewcHBh+wF4BOvBINB1wC6urqwtraGQqFQsyK8ubnB6uqqHON2vmAwqMwNWYFEecWt0f7+fkWJUlKpFObm5uRTYzGoCkJe29tjYv4lpHqOdTuvKVFfgNARFdtkEmbfWmNGR0cV68ixbsH4BoShoVbi4ODANvbt9hLHqJUJBAL6gHBPUPh0nYCwgrm4uJA2lpeX9QChE9y0lHrCyU5ZYVNY2YYcPgxfgJBG1cZ2C0KpIoCZmZmnB8KcQCETeQUyPz8vbe3s7Dw9EMU6pFivQEjNlDOHtZ4vQIrForTS09PjGQhtUIrFYnMDUVm6UCj8D62G2OwLCwvS1vb2tj76JXV6BbK/vy9tTU9P602IrJ3cguCrtdaEKISQpTjl6uoK4XC4OUsUIYQs9FjwqaKRjtU7lsAPDw/l2HQ6rbdoFGVlPJ9uPaeTDKfLy0s5hmP7+vpcze0rEAVGrYwiAJYdzNjMM9RIJCLZSW1stRJuQQgbIENeX3UZGisrK+p8tqrwHu4JN+EkHr7qfrQCee/X4QOZh1UsC8DT01NZAVD5m9dIsW7eXYT94cPbhjsOEg50YmJCAWm3Amllzab7gE440M3NzYcHdCaY7yzNdTsonL1GfP0DhPUQuxnCa/z+lDFs17nNHR8fN0tbIWPb8VXsxZ6dbodF7UZPZ0UQlnZ0kq23RgyxkfvW23rV1puFwWQztJGaPrFYTCXbVN1tamt7mkupuz2dSCRUezpVd3u6bGXYPcXJyQni8biWVcjlcmpPrDv+YKDCJxxpWiJ3s1NE+lMFoV9O05ZhGDJjM9mp4ybPn3BUoOYwe3asAPD4UjTnCvvyUU2VkGs3qZqfJsV9UtqiTdp2F0J/g/wEevfgzsPjtc8AAAAASUVORK5CYII=") 50% 50% no-repeat;
+            background-size: 100%;
+        }
+
+        .icons8-linkedin {
+            order: 2;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKklEQVR4nO2aPWsqQRSGTZncn3ZvbnfAYlfEr8ImmBtIpa6NpPYnJF4R7K0sRK1E0R9grSASQdTGjzfMMJvca2ZdJZCZlXnhbZbjch7PnJlhZkMho4AIwA2A3wDuATwqdkbkcnMOwBWABwBz6Ke5+GOvToH4y37R7XaRz+dhWRaISKkty4LjOOj1ei7Qy1EYAH9YVLlcVp48ebhSqbgwGS+IH6x0rBKqkyUfi8q8SntGNBMfTqoTJR+zYSb003NY2batPFHycSQScUHuZSAcU3WSdKKFHANCl1CRZDKJTqeDxWLB3Wq1EI/HgwcyHA4/LbWqpusvgazXaxxqtVoFD6T3sUV4F3sWOJBYLIZms/lfjyQSieCBkEYWMiC4iIp46ZyYbDbL16LZbIbNZsNnwtFohFqtxntQexC2cA4GAxzTcrlEsVjUG2QymeAUbbdb5HI5fUHO0XQ6RTgc1h9kt9v5xpRKJX1B6vU6UqkUj0un02g0Gp6x7XZbTxCvzaVs28M0Ho/1BPFqYHZGINPKZzOqDCQajUrfyZ7LtN/v9QT56nvJgJCpiFRmaJHpETKzFpnpVy4y6wjMKQq+28f2Whdz0XPLER1HeaLk40KhcPTqjX0gMFd1lnuO+/2+exl6/QlEwLDLeH4FrDpZ8nC1WnWrcSeF+OeDgTKLYpVhw0yHnrFtmw8nUQmm51O/fsiI0ummV1YJX4gDoGsAvwTUk2JnRC7ynjAK6ac3eIKKk7wzydwAAAAASUVORK5CYII=") 50% 50% no-repeat;
+            background-size: 100%;
+        }
+
+        .icons8-whatsapp {
+            order: 2;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: url("data:image/png;base64,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") 50% 50% no-repeat;
+            background-size: 100%;
+        }
+
+	</style>
+
+
+
+
+</head>
+
+	  <body>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDQPXHXT"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+
+		  <div id="wrap">
+
+		  	<!-- LOADER -->
+		  	<!--<div id="loader-wrapper">
+		  		<div id="loader"><img src="images/logo-white.png" alt=""><span>Loading...</span></div>
+		  		
+		  		<div class="loader-section section-left"></div>
+		  		
+		  		<div class="loader-section section-right"></div>
+		  		
+		  	</div>-->
+
+
+		  	<!-- CUSTOM MENU START -->
+		  	<div class="mobile-menu">
+		  		<div class="cd-header">
+		  			<a class="cd-primary-nav-trigger" href="javascript:void(0);">
+		  				<span class="cd-menu-icon"></span>
+		  			</a>
+		  		</div>
+
+
+		  		<nav>
+
+					<ul class="cd-primary-nav">
+						<li class="cd-label">Custom Menu</li>
+
+						<li><a href="index" style="text-transform:none">Home</a></li>
+						<li><a href="about" style="text-transform:none">About Us</a></li>
+						<li><a href="projects" style="text-transform:none">Projects</a></li>
+						<li><a href="services" style="text-transform:none">Services</a></li>
+						<li><a href="blogs" style="text-transform:none">Blogs</a></li>
+						<li><a href="contact-us" style="text-transform:none">Contact Us</a></li>
+						<li class="cd-label">Follow us</li>
+
+						<li class="social-icons" style="text-align:center; margin-top:0px;">
+							<a href="https://www.facebook.com/profile.php?id=100088439615993&mibextid=LQQJ4d"><span class="icon-facebook-1" style="margin-right:50px"></span></a>
+							<a href="https://instagram.com/theaddress_studio?igshid=MjEwN2IyYWYwYw=="><span class="icon-instagram" style="margin-left:-20px"></span></a>
+							<a href="https://www.linkedin.com/company/the-address-studio/"><span class="icon-linkedin" style="margin-left:30px; margin-right:50px"></span></a>
+						</li>
+
+					</ul>
+		  		</nav>
+		  	</div>
+		  	<!-- CUSTOM MENU END -->
+		  	<!-- MAIN HEADER -->
+
+		  	<header class="header-two-main">
+
+		  		<div class="header">
+		  			<div class="row">
+		  				<div class="col-md-12">
+
+		  					<div class="logo">
+		  						<a href="index"><img src="images/logo-black.png" alt=""></a>
+		  					</div>
+
+		  					<div class="navigation">
+
+								<ul>
+									<li class="select"><a href="index" style="text-transform:none">Home</a></li>
+									<li><a href="about" style="text-transform:none">About Us</a></li>
+									<li><a href="projects" style="text-transform:none">Projects</a></li>
+									<li><a href="services" style="text-transform:none">Services</a></li>
+									<li><a href="blogs" style="text-transform:none">Blogs</a></li>
+									<li><a href="contact-us" style="text-transform:none">Contact Us</a></li>
+								</ul>
+
+		  					</div>
+
+		  				</div>
+		  			</div>
+		  		</div>
+
+		  	</header>
+
+		  	<!--
+	#################################
+		- THEMEPUNCH BANNER -
+	#################################
+	-->
+		  	<div class="tp-banner-container main-banner">
+		  		<div class="tp-banner white-slide ">
+		  			<ul>
+		  				<!-- SLIDE  -->
+		  				<li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-thumb="" data-saveperformance="on" data-title="Intro Slide">
+		  					<!-- MAIN IMAGE -->
+		  					<img src="images/slides/slidebg1.jpg" alt="" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		  					<!-- LAYERS -->
+		  					<!-- LAYER NR. 11 -->
+		  					<div class="tp-caption customin tp-resizeme rs-parallaxlevel-0 fade"
+							   data-x="50"
+							   data-y="650"
+							   data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
+							   data-speed="1000"
+							   data-start="1000"
+							   data-easing="Power3.easeInOut"
+							   data-splitin="none"
+							   data-splitout="none"
+							   data-elementdelay="0.1"
+							   data-endelementdelay="0.1"
+							   data-linktoslide="next"
+							   style="z-index: 12; max-width: auto; max-height: auto; white-space: nowrap;">
+								<div class="social">
+									<a href="https://www.facebook.com/profile.php?id=100088439615993&mibextid=LQQJ4d">
+										<div class="social-btn">
+											<div class="icons8-facebook"></div>
+										</div>
+									</a>
+									<a href="https://instagram.com/theaddress_studio?igshid=MjEwN2IyYWYwYw==">
+										<div class="social-btn">
+											<div class="icons8-instagram"></div>
+										</div>
+									</a>
+									<a href="https://www.linkedin.com/company/the-address-studio/">
+										<div class="social-btn">
+											<div class="icons8-linkedin"></div>
+										</div>
+									</a>
+									<a href="whatsapp://send?text=Thank you for contacting The Address Studio &amp;phone=+917877316831">
+										<div class="social-btn">
+											<div class="icons8-whatsapp"></div>
+										</div>
+									</a>
+								</div>
+								<!--<div class="social-icons">
+									<a href="#" class="fb"><i class="icon-facebook-1"></i></a>
+									<a href="https://instagram.com/theaddress_studio?igshid=MjEwN2IyYWYwYw==" class="tw"><i class="icon-instagram"></i></a>
+									<a href="https://www.linkedin.com/company/the-address-studio/" class="gb"><i class="icon-linkedin"></i></a>
+								</div>-->
+		  					</div>
+
+		  				</li>
+
+		  			</ul>
+		  			<div class="tp-bannertimer"></div>
+		  		</div>
+		  	</div>
+
+		  	<!-- START CONTENT -->
+		  	<div class="content">
+
+		  		<!-- START OUR STUDIOS -->
+		  		<section class="sec-space" style="padding-top:45px">
+		  			<div class="container">
+		  				<div class="row">
+
+		  					<div class="col-md-12">
+		  						<div class="main-heading" style="padding:15px">
+		  							<h4>Crafting Perfection</h4>
+		  							<h3>One Detail at a Time</h3>
+		  						</div>
+		  					</div>
+
+							<div class="what-we-do">
+								<div class="row">
+
+									<div class="col-md-6">
+										<div class="welcome-serv-img">
+											<img src="images/servce-img1.png" alt="">
+										</div>
+									</div>
+
+									<div class="col-md-6">
+
+										<div class="detail" style="text-align: justify">
+											<p style="font-size: 15px !important">Here's a sneak peek of our skilled artisans in action, meticulously bringing exquisite furniture pieces to life. Each curve, every detail, and the passion poured into the process reflects our commitment to creating furniture that speaks of both artistry and functionality.
+                                            </p>
+                                            <p style="font-size: 15px !important">These images showcase the design process, from selecting furnishings to creating captivating spaces that inspire. Witness the exciting transformation of our retail store  reflect a modern and inviting look. Sleek elements, large display, and British flooring will draw customers in, creating a captivating first impression.</p>
+                                            <br/>
+                                            <p style="font-size: 15px !important">The process of transforming a retail space is an exciting journey filled with creative challenges and innovative ideas. Our aim is to create a modern, customer-centric space that fosters a unique shopping experience while increasing foot fall. A space transformation, creating a welcoming, aesthetically appealing environment that resonates with our target audience.</p>
+										    <p style="font-size: 15px !important">Utilising every square foot efficiently to accommodate a wider range of products while maintaining an open and airy ambiance.As we move forward with the transformation, our commitment to creating a remarkable retail space remains steadfast. The challenges encountered have only strengthened us to resolve to create a space that delights customers and elevates the shopping experience.Stay tuned for the grand reveal of our latest project, where craftsmanship and beauty unite to transform spaces into captivating havens of comfort and style</p>
+										</div>
+
+									</div>
+
+								</div>
+								
+								<div class="view-all" style="margin-top:20px">
+  					                <a class="black-btn" href="projects">view all projects</a>
+  			                    </div>
+
+							</div>
+
+		  					
+
+		  				</div>
+		  			</div>
+		  		</section>
+		  		<!-- END OUR STUDIOS -->
+		  		<!-- START OUR STUDIOS -->
+		  		<section class="sec-space clients-words">
+		  			<div class="container">
+
+		  				<div class="col-md-12">
+		  					<div class="main-heading white">
+		  						<h4>kind-words</h4>
+		  						<h2 style="color:#fff">Clients</h2>
+		  					</div>
+		  				</div>
+
+
+		  				<div class="col-md-12">
+
+		  					<div class="kind-words">
+		  						<div id="client-words" class="owl-carousel">
+
+		  							<div>
+										<p>
+											We are more than happy to have The Address team work to build our dream house!
+											They gave us their proposed design, and my friends and family instantly fell in love with their work.
+											Aadya and Sanuj were there with us through every step and with a fast and effective response and output to every concern. The team has a fantastic ability to gauge their client’s requirements and implementing it in the most efficient manner. 100% recommend!
+										</p><br />
+										<span class="client">- Shivani Jain</span>
+		  							</div>
+
+		  							<div>
+										<p>Got to know about these wonderful creative minds through a family friend and oh boy, what a saviour it has been. Both of these talented souls are great listeners and what I love the most of them is their ability to put forth their ideas but with backing. I got my house revamped and there has been no looking back since then. Love the aesthetic and the vibe. I have literally not stepped out of my home to run between shops and vendors. Thanks to The Address for giving us exactly what we envisioned</p>
+		  								<br /><span class="client">- Sparsh Singhal</span>
+		  							</div>
+
+		  							<div>
+										<p>
+											The Address Studio, who have worked on transforming my home space into a haven of beauty and functionality.
+											With a keen eye for design and a deep understanding of my personal style and preferences, The Address Studio expertly curated a space that truly reflects my personality. They skillfully combined colors, textures, and materials to create a harmonious and inviting ambience.
+											Throughout the entire process, the designers exhibited the utmost professionalism and dedication.
+											I cannot recommend The Address enough. Their talent, passion, and commitment to creating exceptional spaces is truly remarkable
+										</p>
+										  <br />
+		  								<span class="client">- Niyati Duggal</span>
+		  							</div>
+
+		  						</div>
+		  					</div>
+
+
+		  				</div>
+
+		  			</div>
+		  		</section>
+
+		  	</div>
+		  	<!-- END CONTENT -->
+		  	<!-- START FOOTER -->
+			<footer class="footer-light">
+				<div class="container">
+
+					<div class="footer-detail">
+						<div class="row">
+
+							<div class="col-md-4">
+								<div class="footer-sec">
+									<h6 style="margin:20px;">LET’S TALK</h6>
+									<a href="tel:+917877316831" style="color: #000; font-family: 'Montserrat', sans-serif; font-size:18px;">+91 7877316831</a><br />
+									<a href="tel:+917042634667" style="color: #000; font-family: 'Montserrat', sans-serif; font-size: 18px; margin-top: 10px;">+91 7042634667</a>
+									<a href="mailto:info@theaddressstudio.in" style="color: #000; font-family: 'Montserrat', sans-serif; font-size: 18px; margin-top: 10px;">info@theaddressstudio.in</a>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="footer-sec">
+									<h6 style="margin:20px;">FIND US</h6>
+									<a style="color: #000; font-family: 'Montserrat', sans-serif; margin-top: 10px; font-size: 18px;">Agrim apartments, Sector 43,<br />Gurugram, Haryana - 122009</a>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="footer-sec">
+									<h6  style="margin:20px">FOLLOW US</h6>
+									<div class="social-icons">
+										<a href="https://www.facebook.com/profile.php?id=100088439615993&mibextid=LQQJ4d" class="fb"><i class="icon-facebook-1"></i></a>
+										<a href="https://instagram.com/theaddress_studio?igshid=MjEwN2IyYWYwYw==" class="tw"><i class="icon-instagram"></i></a>
+										<a href="https://www.linkedin.com/company/the-address-studio/" class="gp"><i class="icon-linkedin-square"></i></a>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+
+
+				</div>
+
+				<div class="footer-bottom">
+					<div class="copyrights">
+						<div class="container">
+							<p>Copyright © 2023 The Address Studio. All right reserved.</p>
+							<span>Developed by: <a href="https://vktechsol.com/">VK TECHSOL</a></span>
+
+						</div>
+					</div>
+				</div>
+
+			</footer>
+		  	<!-- END FOOTER -->
+
+		  </div>
+
+	  	<script type="text/javascript" src="js/jquery.js"></script>
+
+	  	<!-- Sticky Header -->
+	  	<script type="text/javascript" src="js/sticky-header.js"></script>
+
+	  	<!-- SMOOTH SCROLL -->
+	  	<script type="text/javascript" src="js/scroll-desktop-smooth.js"></script>
+
+	  	<!-- Custom Menu -->
+	  	<script type="text/javascript" src="js/main.js"></script>
+
+	  	<!-- START REVOLUTION SLIDER -->
+	  	<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+	  	<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
+
+	  	<!-- SERVICES Tabs -->
+	  	<script type="text/javascript" src="js/tabs.js"></script>
+
+	  	<!-- OWL CAROUSEL -->
+	  	<script type="text/javascript" src="js/owl.carousel.js"></script>
+
+	  	<!-- CUSTOM -->
+	  	<script type="text/javascript" src="js/custom.js"></script>
+
+	  	<!-- Revolution Slider -->
+	  	<script type="text/javascript">
+
+			jQuery(document).ready(function () {
+
+
+
+				jQuery('.tp-banner').show().revolution(
+					{
+						dottedOverlay: "none",
+						delay: 16000,
+						startwidth: 1920,
+						startheight: 800,
+						hideThumbs: 200,
+
+						thumbWidth: 100,
+						thumbHeight: 50,
+						thumbAmount: 5,
+
+						navigationType: "bullets",
+						navigationArrows: "solo",
+						navigationStyle: "preview",
+
+						touchenabled: "on",
+						onHoverStop: "on",
+
+						swipe_velocity: 0.7,
+						swipe_min_touches: 1,
+						swipe_max_touches: 1,
+						drag_block_vertical: false,
+
+						parallax: "mouse",
+						parallaxBgFreeze: "on",
+						parallaxLevels: [7, 4, 3, 2, 5, 4, 3, 2, 1, 0],
+
+						keyboardNavigation: "off",
+
+						navigationHAlign: "center",
+						navigationVAlign: "bottom",
+						navigationHOffset: 0,
+						navigationVOffset: 20,
+
+						soloArrowLeftHalign: "left",
+						soloArrowLeftValign: "center",
+						soloArrowLeftHOffset: 20,
+						soloArrowLeftVOffset: 0,
+
+						soloArrowRightHalign: "right",
+						soloArrowRightValign: "center",
+						soloArrowRightHOffset: 20,
+						soloArrowRightVOffset: 0,
+
+						shadow: 0,
+						fullWidth: "on",
+						fullScreen: "off",
+
+						spinner: "spinner4",
+
+						stopLoop: "off",
+						stopAfterLoops: -1,
+						stopAtSlide: -1,
+
+						shuffle: "off",
+
+						autoHeight: "off",
+						forceFullWidth: "off",
+
+
+
+						hideThumbsOnMobile: "off",
+						hideNavDelayOnMobile: 1500,
+						hideBulletsOnMobile: "off",
+						hideArrowsOnMobile: "off",
+						hideThumbsUnderResolution: 0,
+
+						hideSliderAtLimit: 0,
+						hideCaptionAtLimit: 0,
+						hideAllCaptionAtLilmit: 0,
+						startWithSlide: 0,
+						videoJsPath: "rs-plugin/videojs/",
+						fullScreenOffsetContainer: ""
+					});
+
+
+
+
+			});	//ready
+
+	  	</script>
+
+
+	  </body>
+</html>
